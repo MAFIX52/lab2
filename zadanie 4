@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	setlocale(0, "");
+	const int size1 = 12;
+	int arr1[size1] = { 2 , 3,6,8,5,7,-12,-4,-14,-9,-10,-3 };
+
+	cout << "Положительные числа:\n";
+	// Вывод положительных чисел
+	for (int i = 0; i < size1; i++) {
+		if (arr1[i] > 0) {
+			cout << arr1[i]<<" ";
+		}
+	}
+
+	cout << "\nОтрицательные числа:\n";
+	// Вывод отрицательных чисел
+	for (int i = 0; i < size1; i++) {
+		if (arr1[i] < 0) {
+			cout << arr1[i]<<" ";
+		}
+	}
+	return 0;
+}
