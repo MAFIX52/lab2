@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+	
+	const int n = 5;
+
+	int ids[n];
+	int points[n]; 
+
+	
+	for (int i = 0; i < n; i++) {
+		cout << "Введите идентификационный номер для участника " << i + 1 << ": ";
+		cin >> ids[i];
+
+		cout << "Введите количество баллов для участника " << i + 1 << ": ";
+		cin >> points[i];
+	}
+
+	
+	
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = 0; j < n - i - 1; j++) {
+			if (points[j] < points[j + 1]) {
+				
+				int temp = points[j];
+				points[j] = points[j + 1];
+				points[j + 1] = temp;
+
+				
+				temp = ids[j];
+				ids[j] = ids[j + 1];
+				ids[j + 1] = temp;
+			}
+		}
+	}
+
+	
+	cout << "Отсортированный список участников:\n";
+	for (int i = 0; i < n; i++) {
+		cout << "Участник " << i + 1 << ": идентификационный номер - " << ids[i]
+			<< ", количество баллов - " << points[i] << "\n";
+	}
+
+	return 0;
+}
