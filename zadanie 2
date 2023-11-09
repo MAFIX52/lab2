@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	setlocale(0, "");
+	int num = 0, t = 0;
+	cout << "ведите число: ";
+	cin >> num;
+	while (num)
+	{
+		num = num / 2;
+		t = num % 2;
+		cout << t;
+	}
